@@ -1,0 +1,1505 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #fbe4eb; /* Light pink background from image */
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background floating hearts */
+.hearts-bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart-bg {
+  position: absolute;
+  color: rgba(255, 105, 180, 0.15);
+  font-size: 1.5rem;
+  animation: floatUp 8s infinite linear;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  50% { opacity: 0.6; }
+  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+/* Centered screen overlay */
+.screen-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1;
+  position: relative;
+}
+
+/* Main Card Container Styling */
+.card-container {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(220, 100, 140, 0.15);
+  text-align: center;
+  max-width: 440px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Passcode Lock Icon */
+.passcode-card {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #fff5f8 100%);
+  border: 2px solid #ffccd5;
+  box-shadow: 0 20px 45px rgba(255, 0, 85, 0.2);
+  animation: floatCard 4s infinite ease-in-out;
+  overflow: hidden;
+}
+.passcode-card i.fa-lock {
+  color: #ff0055;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+/* Card Floating Effect */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ==========================================
+   STYLED NAME & HEADER (VAISHNAVI JADHAV)
+   ========================================== */
+
+.birthday-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Elegant script for "Happy Birthday" */
+.birthday-greeting {
+  display: block;
+  font-family: 'Great Vibes', 'Caveat', cursive;
+  font-size: 2.8rem;
+  color: #ff0055;
+  text-shadow: 0 2px 8px rgba(255, 0, 85, 0.2);
+  margin-bottom: 2px;
+  animation: gentlePulse 3s infinite ease-in-out;
+}
+
+/* Stylish Dual-Color Typography for VAISHNAVI JADHAV */
+.birthday-name-styled {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  line-height: 1.15;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* "VAISHNAVI" - Deep Crimson / Velvet Rose */
+.birthday-name-styled .first-name {
+  display: block;
+  font-size: 2.4rem;
+  color: #6b1426;
+  text-shadow: 0 2px 10px rgba(107, 20, 38, 0.15);
+}
+
+/* "JADHAV" - Rose Gold / Golden Accent Gradient */
+.birthday-name-styled .last-name {
+  display: block;
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, #d4af37 0%, #ff0055 50%, #8b0032 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(255, 0, 85, 0.2));
+  letter-spacing: 3.5px;
+}
+
+/* Subtle Glowing Divider Under Name */
+.decorative-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.decorative-line::before,
+.decorative-line::after {
+  content: '';
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff758f, transparent);
+}
+
+.line-heart {
+  font-size: 1.1rem;
+  animation: heartBeat 1.5s infinite ease-in-out;
+}
+
+.line-sparkle {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Keyframe Animations */
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.25); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.15); }
+}
+
+/* Font Styles for Bday Screen (Matching New Picture) */
+.passcode-card h2, .bday-title {
+  font-family: 'Caveat', cursive; /* Handwritten look */
+  font-size: 3rem;
+  font-weight: 700;
+  color: #802e3b; /* Dark brownish-red from image */
+  margin: 5px 0;
+}
+
+.bday-name {
+  font-family: 'Caveat', cursive;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #802e3b; /* Dark brownish-red from image */
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.card-container p, .balloon-subtitle {
+  font-size: 0.95rem;
+  color: #92324d;
+  margin-bottom: 25px;
+}
+
+/* Italic serif font for "Are you excited..." */
+.question-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: #802e3b;
+  margin: 20px 0;
+}
+
+/* Input Field Styling */
+.passcode-input {
+  width: 100%;
+  padding: 14px 20px;
+  border: 1.5px solid #ffccd5;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  text-align: center;
+  outline: none;
+  color: #444;
+  box-sizing: border-box;
+  margin-bottom: 18px;
+  transition: all 0.3s ease;
+}
+
+.passcode-input::placeholder {
+  color: #a89299;
+}
+
+.passcode-input:focus {
+  border-color: #ff0055;
+  box-shadow: 0 0 10px rgba(255, 0, 85, 0.15);
+}
+
+/* Common Button Styling */
+.btn-common, .btn-yes, .btn-no {
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 100px;
+}
+
+/* Yes Button (Pink) */
+.btn-common, .btn-yes {
+  background-color: #ff0055; /* Bright pink from image */
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(255, 0, 85, 0.3);
+}
+
+.btn-common:hover, .btn-yes:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 0, 85, 0.4);
+}
+
+/* No Button (White with Border) */
+.btn-no {
+  background-color: #ffffff;
+  color: #666;
+  border: 1px solid #ffccd5;
+  position: relative; /* Needed for dodging */
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Illustration Wrapper */
+.illustration-wrapper {
+  margin: -10px auto 20px auto;
+  max-width: 300px;
+}
+
+/* ==========================================
+   STEP 2: FLYING FLOWERS ANIMATION
+   ========================================== */
+
+/* Outer container covering full viewport */
+.flying-flowers-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows clicking card buttons behind flowers */
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Base style for each flower */
+.flower {
+  position: absolute;
+  bottom: -50px;
+  font-size: 2.2rem;
+  opacity: 0;
+  animation: floatUpFlower 6s infinite ease-in-out;
+}
+
+/* Left Side Flowers Positioning */
+.flower-left.f1 { left: 4%;  animation-delay: 0s;   font-size: 2.5rem; }
+.flower-left.f2 { left: 12%; animation-delay: 1.5s; font-size: 2rem;   }
+.flower-left.f3 { left: 20%; animation-delay: 3s;   font-size: 2.8rem; }
+.flower-left.f4 { left: 8%;  animation-delay: 4.2s; font-size: 2.2rem; }
+.flower-left.f5 { left: 16%; animation-delay: 5.5s; font-size: 2.4rem; }
+
+/* Right Side Flowers Positioning */
+.flower-right.f1 { right: 4%;  animation-delay: 0.8s; font-size: 2.4rem; }
+.flower-right.f2 { right: 12%; animation-delay: 2.2s; font-size: 2.8rem; }
+.flower-right.f3 { right: 20%; animation-delay: 3.6s; font-size: 2rem;   }
+.flower-right.f4 { right: 8%;  animation-delay: 4.8s; font-size: 2.6rem; }
+.flower-right.f5 { right: 16%; animation-delay: 5.9s; font-size: 2.1rem; }
+
+/* Continuous Flying Up Animation with Swaying */
+@keyframes floatUpFlower {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-50vh) rotate(180deg) translateX(25px) scale(1.1);
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg) translateX(-25px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Balloon Grid */
+/* Make the Balloon Card wider and larger */
+.balloon-card {
+  max-width: 600px !important; /* Increased width from 440px to 600px */
+  padding: 45px 35px !important;
+}
+
+.balloon-title {
+  font-family: 'Caveat', cursive;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #802e3b;
+  margin-bottom: 5px;
+}
+
+.balloon-subtitle {
+  font-size: 1.05rem;
+  color: #92324d;
+  margin-bottom: 30px;
+}
+
+/* Adjust grid gap and balloon sizes */
+
+
+.balloon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px; /* Increased gap between balloons */
+  margin: 30px 0;
+}
+
+.balloon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  transition: transform 0.2s ease;
+}
+
+.balloon-wrapper:hover {
+  transform: scale(1.08); /* Nice hover effect on balloons */
+}
+
+/* Make balloon SVGs bigger */
+.balloon-svg {
+  width: 110px !important;  /* Increased from 85px */
+  height: 145px !important; /* Increased from 115px */
+}
+
+/* Make popped cards look roomier */
+.popped-card {
+  background: #fff0f5;
+  border: 1.5px solid #ffd6e0;
+  border-radius: 18px;
+  padding: 22px 15px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popped-word {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #ff0055;
+  margin-bottom: 6px;
+}
+
+.popped-desc {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.next-btn-container {
+  margin-top: 25px;
+}
+
+/* Step 4: Bouquet Card Specific Styling */
+/* Step 4: Full Portrait Image & Card Overrides */
+.screen-overlay.bouquet-screen {
+  align-items: flex-start !important;
+  padding: 40px 20px !important;
+  overflow-y: auto !important;
+}
+
+.bouquet-card {
+  max-width: 490px !important;
+  width: 100% !important;
+  height: auto !important;      /* Removes any fixed height restrictions */
+  max-height: none !important;  /* Prevents max-height truncation */
+  padding: 30px 25px !important;
+  overflow: visible !important; /* Ensures no content is clipped */
+}
+
+.real-tulip-container {
+  width: 93% !important;
+  height: auto !important;      /* Lets container expand to match image height */
+  max-height: none !important;
+  border-radius: 20px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(220, 100, 140, 0.15);
+  display: block !important;
+}
+
+.real-tulip-img {
+  width: 93% !important;
+  height: auto !important;       /* Maintains exact natural aspect ratio */
+  max-height: none !important;   /* Disables height capping */
+  object-fit: fill !important;  /* Forces full image rendering without zoom/crop */
+  display: block !important;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.real-tulip-img:hover {
+  transform: scale(1.02);
+}
+
+/* Flirty Text Styling */
+.flirt-title {
+  font-family: 'Caveat', cursive;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #802e3b;
+  margin: 10px 0 5px 0;
+  line-height: 1.2;
+}
+
+.flirt-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.8rem;
+  color: #ff0055;
+  margin-bottom: 15px;
+}
+
+.flirt-text {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.keep-smiling-tag {
+  display: inline-block;
+  background-color: #fff0f5;
+  border: 1px solid #ffd6e0;
+  color: #ff0055;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Final Bouquet Image */
+.real-tulip-img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+/* Mobile Banner */
+.mobile-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff0055;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 0.8rem;
+  z-index: 10;
+}
+
+/* Step 5: Cake Card Styling */
+.cake-card {
+  max-width: 480px !important;
+  padding: 40px 30px !important;
+  text-align: center;
+}
+
+.cake-title {
+  font-family: 'Caveat', cursive;
+  font-size: 2.8rem;
+  color: #802e3b;
+  margin-bottom: 5px;
+}
+
+.cake-subtitle {
+  font-size: 0.95rem;
+  color: #ff0055;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Cake Container */
+.cake-container {
+  cursor: pointer;
+  max-width: 320px;
+  margin: 0 auto;
+  transition: transform 0.2s ease;
+}
+
+.cake-container:hover {
+  transform: scale(1.02);
+}
+
+.cake-svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Flame Animations */
+.flame-anim {
+  animation: flicker 0.7s infinite alternate ease-in-out;
+  transform-origin: 160px 50px;
+}
+
+.flame-glow {
+  animation: pulseGlow 1s infinite alternate ease-in-out;
+  transform-origin: 160px 36px;
+}
+
+@keyframes flicker {
+  0% { transform: scale(1) rotate(-2deg); }
+  100% { transform: scale(1.12) rotate(3deg); }
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.25; transform: scale(0.85); }
+  100% { opacity: 0.6; transform: scale(1.15); }
+}
+
+/* Extinguished Flame */
+#candle-flame.extinguished {
+  display: none !important;
+}
+
+/* Smoke rising effect */
+.smoke-anim {
+  animation: riseSmoke 2s forwards ease-out;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+}
+
+.smoke-anim-delay {
+  animation: riseSmoke 2.2s 0.2s forwards ease-out;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+}
+
+@keyframes riseSmoke {
+  0% { stroke-dashoffset: 60; opacity: 0.8; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+/* Screen Flash when patake explode */
+.patake-flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,182,193,0.3) 100%);
+  pointer-events: none;
+  animation: flashBurst 0.6s ease-out forwards;
+  z-index: 10;
+}
+
+@keyframes flashBurst {
+  0% { opacity: 1; transform: scale(0.95); }
+  100% { opacity: 0; transform: scale(1.05); }
+}
+
+/* Grand Birthday Text Animation */
+.celebration-msg.pop-in {
+  margin-top: 15px;
+  animation: popScale 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.grand-wish {
+  font-family: 'Caveat', cursive;
+  font-size: 2.6rem;
+  color: #ff0055;
+  margin-bottom: 5px;
+  text-shadow: 0 4px 10px rgba(255, 0, 85, 0.2);
+  line-height: 1.1;
+}
+
+.grand-subtext {
+  font-weight: 600;
+  color: #6d1b29;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.sub-quote {
+  font-style: italic;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+@keyframes popScale {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+/* Step 6 Memory Card Layout */
+.memory-card {
+  top: 20px;
+  max-width: 600px !important;
+  padding: 35px 25px !important;
+  text-align: center;
+  position: relative;
+}
+
+.memory-title {
+  font-family: 'Caveat', cursive;
+  font-size: 2.8rem;
+  color: #802e3b;
+  margin-bottom: 2px;
+}
+
+.memory-subtitle {
+  font-size: 0.95rem;
+  color: #ff0055;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Polaroid Card Styling */
+.polaroid-wrapper {
+  margin: 0 auto 20px auto;
+  max-width: 350px;
+}
+
+.polaroid-frame {
+  background: #ffffff;
+  padding: 15px 15px 20px 15px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(220, 100, 140, 0.25);
+  transform: rotate(-1.5deg);
+  transition: transform 0.3s ease;
+}
+
+.polaroid-frame:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.polaroid-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+/* Clickable Polaroid Frame */
+.polaroid-frame.clickable {
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.25 ease, box-shadow 0.25s ease;
+}
+
+.polaroid-frame.clickable:hover {
+  transform: scale(1.03) rotate(0deg);
+  box-shadow: 0 12px 28px rgba(255, 0, 85, 0.25);
+}
+
+.polaroid-frame.clickable:active {
+  transform: scale(0.97);
+}
+
+/* Photo Swap Click Animation */
+.polaroid-frame.photo-animate {
+  animation: photoFlip 0.45s ease-in-out forwards;
+}
+
+@keyframes photoFlip {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(0.92) rotate(-5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-1.5deg);
+  }
+}
+
+/* Badge for photo counter */
+.photo-counter-badge {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ff0055;
+  background: #fff0f3;
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 15px;
+}
+
+.polaroid-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  color: #6d1b29;
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+/* Photo Navigation Controls */
+.photo-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.nav-btn {
+  background: #ffffff;
+  border: 1px solid #ffccd5;
+  color: #ff0055;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #ff0055;
+  color: #ffffff;
+}
+
+.photo-counter {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #888;
+}
+
+/* Sweet Compliments Box */
+.sweet-notes-box {
+  background: #fff0f3;
+  border-radius: 18px;
+  padding: 18px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.sweet-line {
+  font-size: 0.92rem;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.sweet-line:last-child {
+  margin-bottom: 0;
+}
+
+.final-tag {
+  font-family: 'Caveat', cursive;
+  font-size: 2rem;
+  color: #ff0055;
+  font-weight: 700;
+}
+
+/* Floating Ambient Hearts */
+.floating-hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-hearts span {
+  position: absolute;
+  display: block;
+  font-size: 1.5rem;
+  animation: floatUp 6s infinite ease-in-out;
+  opacity: 0.7;
+}
+
+.floating-hearts span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.floating-hearts span:nth-child(2) { left: 25%; animation-delay: 2s; }
+.floating-hearts span:nth-child(3) { left: 50%; animation-delay: 4s; }
+.floating-hearts span:nth-child(4) { left: 70%; animation-delay: 1s; }
+.floating-hearts span:nth-child(5) { left: 85%; animation-delay: 3s; }
+.floating-hearts span:nth-child(6) { left: 95%; animation-delay: 5s; }
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+/* Container Layout */
+.letter-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- 3D ENVELOPE STYLING --- */
+.envelope-box {
+  width: 320px;
+  height: 210px;
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.envelope-box:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.envelope-back {
+  width: 100%;
+  height: 100%;
+  background: #f7a8b8;
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 15px 35px rgba(230, 80, 120, 0.3);
+}
+
+.envelope-pocket {
+  width: 0;
+  height: 0;
+  border-left: 160px solid #ffccd5;
+  border-right: 160px solid #ffccd5;
+  border-bottom: 110px solid #ffb3c1;
+  border-top: 100px solid transparent;
+  border-radius: 0 0 12px 12px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.envelope-flap {
+  width: 0;
+  height: 0;
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
+  border-top: 115px solid #ff85a1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top;
+  transition: transform 0.6s ease-in-out;
+  z-index: 4;
+}
+
+/* Flap Opens 180 degrees */
+.opened .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.envelope-paper-preview {
+  width: 280px;
+  height: 160px;
+  background: #fffdf9;
+  border-radius: 8px;
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  z-index: 2;
+  transition: transform 0.6s ease-in-out 0.4s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.envelope-paper-preview.slide-up {
+  transform: translateY(-120px);
+}
+
+.envelope-content-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  z-index: 5;
+  text-align: center;
+  pointer-events: none;
+}
+
+.seal-heart {
+  font-size: 3rem;
+  animation: pulseHeart 1.5s infinite ease-in-out;
+}
+
+.click-instruction {
+  font-size: 0.95rem;
+  color: #701c2a;
+  font-weight: 600;
+  margin-top: 6px;
+  white-space: nowrap;
+}
+
+/* --- STATIONERY LINED PAPER CARD --- */
+.stationery-paper-card {
+  width: 90%;
+  max-width: 480px;
+  background: #fffefb; /* Warm cream stationery paper */
+  border-radius: 16px;
+  padding: 35px 30px;
+  box-shadow: 0 15px 40px rgba(180, 70, 90, 0.18);
+  border: 1px solid #ffecf0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Paper Header & Stamp */
+.paper-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px dashed #ffd6e0;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.salutation-text {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: 2.5rem;
+  color: #ff0055;
+  margin: 0;
+}
+
+.letter-stamp {
+  font-size: 2.2rem;
+  background: #fff0f3;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px dashed #ff80ab;
+}
+
+.letter-footer {
+  margin-top: 25px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.surprise-next-btn {
+  padding: 14px 28px !important;
+  font-size: 1.05rem !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #ff0055 0%, #ff4d6d 100%) !important;
+  box-shadow: 0 8px 25px rgba(255, 0, 85, 0.4) !important;
+  animation: pulseHeart 1.8s infinite ease-in-out;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Lined Notebook Pattern */
+.lined-paper-body {
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    #ffe3ec 31px,
+    #ffe3ec 32px
+  );
+  line-height: 32px;
+  min-height: 220px;
+}
+
+.written-text {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: 1.65rem;
+  color: #4a1525;
+  margin: 0;
+  white-space: pre-line;
+}
+
+/* Writing Pen Cursor */
+.pen-icon {
+  display: inline-block;
+  font-size: 1.4rem;
+  margin-left: 4px;
+  animation: penWiggle 0.5s infinite alternate ease-in-out;
+}
+
+@keyframes penWiggle {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-4px) rotate(-15deg); }
+}
+
+@keyframes pulseHeart {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.glow-btn {
+  animation: softGlow 2s infinite alternate;
+}
+
+@keyframes softGlow {
+  0% { box-shadow: 0 0 10px rgba(255, 0, 85, 0.3); }
+  100% { box-shadow: 0 0 22px rgba(255, 0, 85, 0.6); }
+}
+
+/* Screen overlay allowing full view scroll */
+.letter-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+/* 📜 GRAND VINTAGE SCROLL CONTAINER */
+.scroll-letter-container {
+  width: 92vw;
+  max-width: 720px; /* Expands broadly on desktop screens */
+  position: relative;
+  margin: 20px auto;
+  filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.35));
+}
+
+/* Unrolling Entrance Animation */
+.unroll-animation {
+  animation: unrollScroll 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes unrollScroll {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.1) scaleX(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1) scaleX(1);
+  }
+}
+
+/* Gold Roller Ends (Matching image handles) */
+.scroll-roller {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+  position: relative;
+  z-index: 5;
+}
+
+.roller-body {
+  flex-grow: 1;
+  height: 18px;
+  background: linear-gradient(to bottom, #f0e6d2, #d8c3a5, #b89f7d);
+  border-radius: 4px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.roller-cap {
+  width: 22px;
+  height: 32px;
+  background: linear-gradient(135deg, #ffd700, #cca100, #8b6d00);
+  border-radius: 50% / 20%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+/* 📜 PARCHMENT PAPER (Torn Deckle Edges & Warm Vintage Texture) */
+.parchment-paper {
+  background: #f8edd1;
+  background-image: 
+    radial-gradient(#e3d0ad 15%, transparent 16%),
+    radial-gradient(#eeddbd 15%, transparent 16%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  padding: 45px 38px;
+  position: relative;
+  box-shadow: inset 0 0 50px rgba(139, 90, 43, 0.25);
+  border-left: 3px dashed #d4b886;
+  border-right: 3px dashed #d4b886;
+  margin: -4px 10px; /* Connects smoothly with gold rollers */
+  min-height: 480px;
+}
+
+/* Pressed Flower Accents */
+.flower-petal {
+  position: absolute;
+  font-size: 1.8rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.petal-1 { top: 25px; left: 25px; transform: rotate(-15deg); }
+.petal-2 { top: 40%; right: 20px; transform: rotate(20deg); }
+.petal-3 { bottom: 85px; left: 35px; transform: rotate(10deg); }
+
+/* 🖋️ CALLIGRAPHY HANDWRITING TEXT */
+.scroll-text-content {
+  text-align: left;
+  line-height: 2.1;
+}
+
+.written-text {
+  font-family: 'Great Vibes', 'Dancing Script', 'Caveat', cursive, sans-serif;
+  font-size: 2.1rem; /* Big, elegant calligraphy flow */
+  color: #3b1e10; /* Deep ink tone */
+  white-space: pre-line;
+  word-break: break-word;
+  text-shadow: 0.5px 0.5px 0px rgba(59, 30, 16, 0.2);
+}
+
+.pen-icon {
+  display: inline-block;
+  font-size: 1.8rem;
+  margin-left: 8px;
+  animation: penWriting 0.35s infinite alternate ease-in-out;
+}
+
+@keyframes penWriting {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-8px) rotate(-22deg); }
+}
+
+.letter-footer {
+  margin-top: 35px;
+  text-align: center;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+  .scroll-letter-container {
+    width: 96vw;
+  }
+  .parchment-paper {
+    padding: 30px 20px;
+  }
+  .written-text {
+    font-size: 1.65rem;
+    line-height: 1.8;
+  }
+}
+
+/* ==========================================
+   STEP 8: ONE LAST GIFT SCREEN
+   ========================================== */
+.gift-card {
+  max-width: 500px !important;
+  padding: 40px 28px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gift-title {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: 3rem;
+  color: #ff0055;
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(255, 0, 85, 0.2);
+}
+
+.gift-sparkle {
+  font-size: 1.8rem;
+  animation: pulseGlow 1.5s infinite alternate ease-in-out;
+}
+
+.gift-subtitle {
+  font-size: 0.98rem;
+  color: #802e3b;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* GIFT BOX ANIMATION */
+.gift-box-wrapper {
+  margin: 20px auto;
+  width: 140px;
+  height: 140px;
+  position: relative;
+  cursor: pointer;
+  perspective: 600px;
+}
+
+.gift-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gift-box:hover {
+  transform: scale(1.06) rotate(2deg);
+}
+
+.gift-body {
+  width: 120px;
+  height: 90px;
+  background: linear-gradient(135deg, #ff4d6d 0%, #ff0055 100%);
+  border-radius: 0 0 12px 12px;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  box-shadow: 0 12px 25px rgba(255, 0, 85, 0.3);
+  overflow: hidden;
+}
+
+.gift-lid {
+  width: 130px;
+  height: 30px;
+  background: linear-gradient(135deg, #ff758f 0%, #ff4d6d 100%);
+  border-radius: 8px;
+  position: absolute;
+  top: 22px;
+  left: 5px;
+  z-index: 3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* RIBBON DETAILS */
+.ribbon-vertical {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 100%;
+  background: #ffd700;
+}
+
+.ribbon-horizontal {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 22px;
+  background: #ffd700;
+}
+
+.ribbon-bow {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 22px;
+  background: #ffd700;
+  border-radius: 50% 50% 0 0;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* OPEN GIFT ANIMATION STATE */
+.gift-box.opened .gift-lid {
+  transform: translateY(-60px) rotate(-20deg);
+  opacity: 0.9;
+}
+
+.gift-content {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+  animation: popUpGift 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.surprise-gift-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 10px 25px rgba(255, 0, 85, 0.35);
+}
+
+@keyframes popUpGift {
+  0% { transform: translateX(-50%) scale(0.2) translateY(40px); opacity: 0; }
+  100% { transform: translateX(-50%) scale(1.1) translateY(-25px); opacity: 1; }
+}
+
+.gift-hint {
+  font-size: 0.9rem;
+  color: #ff0055;
+  font-weight: 600;
+  margin-top: 15px;
+  animation: pulseHeart 1.5s infinite ease-in-out;
+}
+
+.excited-btn {
+  padding: 15px 32px !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   STEP 8: CARTOON PROPOSAL SCREEN
+   ========================================== */
+.proposal-card {
+  max-width: 540px !important;
+  padding: 35px 24px !important;
+  overflow: hidden;
+}
+
+.proposal-heading {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: 3rem;
+  color: #802e3b;
+  margin-bottom: 6px;
+}
+
+.proposal-subheading {
+  font-size: 0.95rem;
+  color: #ff0055;
+  margin-bottom: 20px;
+}
+
+/* TAP HINT */
+.tap-hint {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ff0055;
+  margin-top: 15px;
+  animation: pulseHeart 1.5s infinite ease-in-out;
+}
+
+/* SCENE SVG BOX */
+.story-illustration-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1.5px solid #ffd6e0;
+  box-shadow: 0 12px 30px rgba(220, 100, 140, 0.15);
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.scene-svg {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+}
+
+/* ANIMATIONS */
+/* Walking Motion */
+.walking-anim {
+  animation: walkTowardsHer 3.5s ease-in-out forwards;
+}
+
+@keyframes walkTowardsHer {
+  0% { transform: translate(40px, 185px); }
+  50% { transform: translate(140px, 185px); }
+  100% { transform: translate(210px, 185px); }
+}
+
+/* Falling Tree Petals */
+.falling-petal {
+  animation: petalFall 3s infinite linear;
+}
+
+.p1 { animation-delay: 0s; }
+.p2 { animation-delay: 1.2s; }
+.p3 { animation-delay: 2.1s; }
+
+@keyframes petalFall {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  100% { transform: translate(-40px, 100px) rotate(360deg); opacity: 0; }
+}
+
+/* PROPOSAL TEXT BOX */
+.proposal-story-text {
+  margin-top: 20px;
+  padding: 10px 12px;
+}
+
+.story-p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #802e3b;
+  margin-bottom: 18px;
+}
+
+.proposal-title {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: 2.8rem;
+  color: #ff0055;
+  margin-bottom: 10px;
+  line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(255, 0, 85, 0.2);
+}
+
+.proposal-heartfelt-text {
+  font-size: 0.98rem;
+  color: #4a1525;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.accept-btn {
+  padding: 15px 36px !important;
+  font-size: 1.1rem !important;
+  background: linear-gradient(135deg, #ff0055 0%, #ff3377 100%) !important;
+}
+
+.forever-tag {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: 2.4rem;
+  color: #ff0055;
+  margin-bottom: 5px;
+}
+
+.final-subtext {
+  font-size: 0.95rem;
+  color: #6d1b29;
+  font-weight: 500;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

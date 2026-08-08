@@ -1,0 +1,742 @@
+<!-- Mobile warning popup banner (optional) -->
+<div class="mobile-banner">
+  <i class="fa-solid fa-desktop"></i> For best experience, please view on Desktop/Laptop! ❤️
+</div>
+
+<!-- Container for floating heart background -->
+<div class="hearts-bg-container">
+  <i *ngFor="let h of [1,2,3,4,5,6,7,8,9,10]" class="fa-solid fa-heart heart-bg"></i>
+</div>
+
+<!-- STEP 1: SECRET PASSCODE LOCK SCREEN -->
+<div class="screen-overlay" *ngIf="currentStep === 1">
+  <div class="card-container passcode-card">
+    <i class="fa-solid fa-lock fa-2x"></i>
+    <h2>Secret Passcode</h2>
+    <p>Enter your favorite flower to unlock 🌷</p>
+    
+    <input 
+      type="text" 
+      class="passcode-input" 
+      placeholder="Type answer here..." 
+      [(ngModel)]="passcodeInput"
+      (keyup.enter)="unlockSite()"
+      autocomplete="off" />
+
+    <button class="btn-common" (click)="unlockSite()" style="width: 100%;">
+      Unlock Surprise ❤️
+    </button>
+    
+    <p class="error-msg" *ngIf="errorMessage" style="margin-top: 10px;">Incorrect flower! Try again 🌸</p>
+  </div>
+</div>
+
+<!-- STEP 2: HAPPY BIRTHDAY SCREEN (Matches the new picture) -->
+<!-- STEP 2: BIRTHDAY CARD WITH FLYING FLOWERS -->
+<div class="screen-overlay" *ngIf="currentStep === 2">
+  
+  <!-- Flying Flowers Container (Left & Right) -->
+  <div class="flying-flowers-container">
+    <!-- Left side flowers -->
+    <span class="flower flower-left f1">🌸</span>
+    <span class="flower flower-left f2">🌷</span>
+    <span class="flower flower-left f3">🌺</span>
+    <span class="flower flower-left f4">🌹</span>
+    <span class="flower flower-left f5">🌸</span>
+
+    <!-- Right side flowers -->
+    <span class="flower flower-right f1">🌷</span>
+    <span class="flower flower-right f2">🌸</span>
+    <span class="flower flower-right f3">🌹</span>
+    <span class="flower flower-right f4">🌺</span>
+    <span class="flower flower-right f5">🌷</span>
+  </div>
+
+  <!-- Your existing Card Content -->
+  <div class="card-container step2-card">
+   <!-- STEP 2: STYLED NAME & TITLE -->
+<div class="birthday-header">
+  <span class="birthday-greeting">Happy Birthday</span>
+  <h1 class="birthday-name-styled">
+    <span class="first-name">VAISHNAVI</span>
+    <span class="last-name">JADHAV</span>
+  </h1>
+  <div class="decorative-line">
+    <span class="line-sparkle">✨</span>
+    <span class="line-heart">💖</span>
+    <span class="line-sparkle">✨</span>
+  </div>
+</div>
+
+   <!-- Image / Illustration -->
+<div class="illustration-wrapper">
+
+<svg viewBox="0 0 300 240" width="100%" height="100%">
+
+<!-- Bunting Banner -->
+
+<path d="M 20,40 Q 150,60 280,40" fill="none" stroke="#333" stroke-width="1.5"/>
+
+<polygon points="30,41 45,58 60,44" fill="#ff7675"/>
+
+<polygon points="70,45 85,61 100,47" fill="#ffeaa7"/>
+
+<polygon points="110,48 125,62 140,49" fill="#55efc4"/>
+
+<polygon points="150,49 165,62 180,48" fill="#74b9ff"/>
+
+<polygon points="190,47 205,61 220,45" fill="#a29bfe"/>
+
+<polygon points="230,44 245,58 260,41" fill="#fdcb6e"/>
+
+
+
+<!-- Decorative Stars/Hearts -->
+
+<g transform="translate(105, 27) scale(0.6)">
+
+<path d="M10 0 L13 7 L20 8 L15 13 L16 20 L10 16 L4 20 L5 13 L0 8 L7 7 Z" fill="#81ecec"/>
+
+</g>
+
+<g transform="translate(188, 26) scale(0.6)">
+
+<path d="M10 0 L13 7 L20 8 L15 13 L16 20 L10 16 L4 20 L5 13 L0 8 L7 7 Z" fill="#fdcb6e"/>
+
+</g>
+
+<path d="M 150,38 C 145,30 135,35 150,48 C 165,35 155,30 150,38 Z" fill="#ff4757"/>
+
+
+
+<!-- Left Bear -->
+
+<g id="brown-bear">
+
+<ellipse cx="95" cy="85" rx="12" ry="12" fill="#c48a57" stroke="#222" stroke-width="1.5"/>
+
+<ellipse cx="95" cy="85" rx="7" ry="7" fill="#f8a5c2"/>
+
+<ellipse cx="145" cy="85" rx="12" ry="12" fill="#c48a57" stroke="#222" stroke-width="1.5"/>
+
+<ellipse cx="145" cy="85" rx="7" ry="7" fill="#f8a5c2"/>
+
+
+
+<polygon points="120,60 110,82 130,82" fill="#ff7675" stroke="#222" stroke-width="1.5"/>
+
+<line x1="112" y1="75" x2="128" y2="75" stroke="#fff" stroke-width="2"/>
+
+<circle cx="120" cy="58" r="4" fill="#fff" stroke="#222" stroke-width="1"/>
+
+
+
+<circle cx="120" cy="110" r="32" fill="#dcb084" stroke="#222" stroke-width="2"/>
+
+<circle cx="113" cy="112" r="2.5" fill="#222"/>
+
+<circle cx="127" cy="112" r="2.5" fill="#222"/>
+
+<ellipse cx="120" cy="117" rx="3" ry="2" fill="#222"/>
+
+<circle cx="107" cy="118" r="5" fill="#ff7675" opacity="0.6"/>
+
+<circle cx="133" cy="118" r="5" fill="#ff7675" opacity="0.6"/>
+
+
+
+<path d="M 98,135 Q 90,180 120,180 Q 140,180 142,135 Z" fill="#dcb084" stroke="#222" stroke-width="2"/>
+
+<ellipse cx="115" cy="155" rx="7" ry="10" fill="#c48a57" transform="rotate(-20 115 155)"/>
+
+</g>
+
+
+
+<!-- Right Panda -->
+
+<g id="panda">
+
+<ellipse cx="165" cy="85" rx="11" ry="11" fill="#222"/>
+
+<ellipse cx="215" cy="85" rx="11" ry="11" fill="#222"/>
+
+
+
+<polygon points="190,60 180,82 200,82" fill="#74b9ff" stroke="#222" stroke-width="1.5"/>
+
+<line x1="182" y1="75" x2="198" y2="75" stroke="#fff" stroke-width="2"/>
+
+<circle cx="190" cy="58" r="4" fill="#fff" stroke="#222" stroke-width="1"/>
+
+
+
+<circle cx="190" cy="110" r="32" fill="#ffffff" stroke="#222" stroke-width="2"/>
+
+<ellipse cx="180" cy="112" rx="4" ry="5" fill="#222" transform="rotate(-10 180 112)"/>
+
+<ellipse cx="200" cy="112" rx="4" ry="5" fill="#222" transform="rotate(10 200 112)"/>
+
+<circle cx="181" cy="111" r="1.5" fill="#fff"/>
+
+<circle cx="199" cy="111" r="1.5" fill="#fff"/>
+
+<path d="M 187,118 Q 190,122 193,118" fill="none" stroke="#222" stroke-width="2"/>
+
+<circle cx="174" cy="118" r="5" fill="#ff7675" opacity="0.4"/>
+
+<circle cx="206" cy="118" r="5" fill="#ff7675" opacity="0.4"/>
+
+
+
+<path d="M 168,135 Q 160,180 190,180 Q 210,180 212,135 Z" fill="#ffffff" stroke="#222" stroke-width="2"/>
+
+<ellipse cx="180" cy="148" rx="8" ry="12" fill="#222" transform="rotate(30 180 148)"/>
+
+</g>
+
+
+
+<!-- Birthday Cake -->
+
+<g id="cake" transform="translate(128, 120)">
+
+<ellipse cx="22" cy="58" rx="32" ry="6" fill="#dedede" stroke="#222" stroke-width="1.5"/>
+
+
+<path d="M -8,35 L -8,52 C -8,58 52,58 52,52 L 52,35 Z" fill="#f8a5c2" stroke="#222" stroke-width="1.5"/>
+
+<rect x="-8" y="38" width="60" height="8" fill="#ffeaa7"/>
+
+<text x="22" y="45" font-family="'Poppins', sans-serif" font-size="6.5" font-weight="bold" text-anchor="middle" fill="#222">BIRTHDAY</text>
+
+
+
+<path d="M 0,18 L 0,35 C 0,40 44,40 44,35 L 44,18 Z" fill="#ff7675" stroke="#222" stroke-width="1.5"/>
+
+<path d="M 0,18 C 0,23 44,23 44,18 C 44,13 0,13 0,18 Z" fill="#ffffff" stroke="#222" stroke-width="1.5"/>
+
+<text x="22" y="28" font-family="'Poppins', sans-serif" font-size="6.5" font-weight="bold" text-anchor="middle" fill="#222">HAPPY</text>
+
+
+
+<rect x="20" y="2" width="4" height="12" fill="#74b9ff" stroke="#222" stroke-width="1"/>
+
+<path d="M 22,-3 C 25,-1 25,2 22,3 C 19,2 19,-1 22,-3 Z" fill="#fdcb6e"/>
+
+</g>
+
+</svg>
+
+</div>
+
+    <p class="question-text">Are you excited for what's next?</p>
+
+    <div class="btn-group">
+      <button class="btn-yes" (click)="goToBalloonScreen()">Yes</button>
+      <button class="btn-no" (mouseover)="moveNoBtn($event)" (touchstart)="moveNoBtn($event)">No</button>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 3: BALLOON POPPING SCREEN (Kept as before) -->
+<div class="screen-overlay" *ngIf="currentStep === 3">
+  <div class="card-container balloon-card">
+    <h2 class="balloon-title">Pop All Balloons! 🎈✨</h2>
+    <p class="balloon-subtitle">Tap each balloon to reveal special secret messages ❤️</p>
+
+    <div class="balloon-grid">
+      <!-- Balloon 1 -->
+      <div class="balloon-item" (click)="popBalloon(0, $event)">
+        <div class="balloon-wrapper" *ngIf="!poppedBalloons[0]">
+          <svg class="balloon-svg" viewBox="0 0 100 135">
+            <path d="M 50,8 C 18,8 8,38 8,65 C 8,98 38,115 50,115 C 62,115 92,98 92,65 C 92,38 82,8 50,8 Z" fill="#2ecc71" />
+            <polygon points="50,115 42,125 58,125" fill="#145a32"/>
+          </svg>
+        </div>
+        <div class="popped-card" *ngIf="poppedBalloons[0]">
+          <div class="popped-word">You 💖</div>
+          <div class="popped-desc">the sweetest soul ✨</div>
+        </div>
+      </div>
+
+      <!-- Balloon 2 -->
+      <div class="balloon-item" (click)="popBalloon(1, $event)">
+        <div class="balloon-wrapper" *ngIf="!poppedBalloons[1]">
+          <svg class="balloon-svg" viewBox="0 0 100 135">
+            <path d="M 50,8 C 18,8 8,38 8,65 C 8,98 38,115 50,115 C 62,115 92,98 92,65 C 92,38 82,8 50,8 Z" fill="#ff4757" />
+            <polygon points="50,115 42,125 58,125" fill="#78281f"/>
+          </svg>
+        </div>
+        <div class="popped-card" *ngIf="poppedBalloons[1]">
+          <div class="popped-word">Are 🌟</div>
+          <div class="popped-desc">my constant source of pure happiness 🎉</div>
+        </div>
+      </div>
+
+      <!-- Balloon 3 -->
+      <div class="balloon-item" (click)="popBalloon(2, $event)">
+        <div class="balloon-wrapper" *ngIf="!poppedBalloons[2]">
+          <svg class="balloon-svg" viewBox="0 0 100 135">
+            <path d="M 50,8 C 18,8 8,38 8,65 C 8,98 38,115 50,115 C 62,115 92,98 92,65 C 92,38 82,8 50,8 Z" fill="#9b59b6" />
+            <polygon points="50,115 42,125 58,125" fill="#4a235a"/>
+          </svg>
+        </div>
+        <div class="popped-card" *ngIf="poppedBalloons[2]">
+          <div class="popped-word">Best 👑</div>
+          <div class="popped-desc">the most wonderful person in the world ✨</div>
+        </div>
+      </div>
+
+      <!-- Balloon 4 -->
+      <div class="balloon-item" (click)="popBalloon(3, $event)">
+        <div class="balloon-wrapper" *ngIf="!poppedBalloons[3]">
+          <svg class="balloon-svg" viewBox="0 0 100 135">
+            <path d="M 50,8 C 18,8 8,38 8,65 C 8,98 38,115 50,115 C 62,115 92,98 92,65 C 92,38 82,8 50,8 Z" fill="#f1c40f"/>
+            <polygon points="50,115 42,125 58,125" fill="#7d6608"/>
+          </svg>
+        </div>
+        <div class="popped-card" *ngIf="poppedBalloons[3]">
+          <div class="popped-word">Forever ❤️</div>
+          <div class="popped-desc">and I will cherish you always! 💐</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="next-btn-container" *ngIf="poppedCount === 4">
+      <button class="btn-common" (click)="goToBouquetScreen()">See Final Surprise 🌷</button>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 4: TULIP BOUQUET SCREEN -->
+<!-- STEP 4: TULIP BOUQUET SCREEN -->
+<div class="screen-overlay bouquet-screen" *ngIf="currentStep === 4">
+  <div class="card-container bouquet-card">
+    <div class="real-tulip-container" (click)="triggerFlowerConfetti()">
+      <img src="tulip.png" alt="Tulip Bouquet" class="real-tulip-img" />
+    </div>
+
+    <h2 class="flirt-title">Happy Birthday to my favorite person! 🎂🌷</h2>
+    <h3 class="flirt-subtitle">Tuzyasathi he chhotasa surprise... ✨</h3>
+
+    <p class="flirt-text">
+      A little bird told me you loved tulips, but honestly? <b>He phul pan tuzya samor fike padtat.</b> 
+      May your birthday and year ahead be as bright and beautiful as your smile!
+    </p>
+
+    <div class="keep-smiling-tag">
+    Keep smiling always ❤️
+    </div>
+
+    <!-- Next Surprise Button -->
+    <div class="next-btn-container" style="margin-top: 25px;">
+      <button class="btn-common" (click)="goToNextSurprise()">
+        See Next Surprise ✨
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Audio element -->
+<audio #bgMusic loop src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-piano-112199.mp3"></audio>
+
+<audio 
+  #hbdSong 
+  src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=happy-birthday-15285.mp3" 
+  preload="auto">
+</audio>
+<!-- STEP 5: INTERACTIVE CAKE & CANDLE BLOWING SCREEN -->
+<div class="screen-overlay cake-screen" [class.celebrate-bg]="isCandleBlown" *ngIf="currentStep === 5">
+  
+  <!-- Screen Celebration Flash Effect -->
+  <div class="patake-flash" *ngIf="isCandleBlown"></div>
+
+  <div class="card-container cake-card">
+    <h2 class="cake-title" *ngIf="!isCandleBlown">Make a Wish & Blow the Candle! 🕯️✨</h2>
+    <p class="cake-subtitle" *ngIf="!isCandleBlown">Tap on the candle flame to blow it out!</p>
+
+    <!-- Interactive Yummy Cake SVG -->
+    <div class="cake-container" (click)="blowOutCandle()">
+      <svg viewBox="0 0 320 300" class="cake-svg">
+        <defs>
+          <linearGradient id="cakeLayer" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#f8a5c2"/>
+            <stop offset="100%" stop-color="#ff7675"/>
+          </linearGradient>
+
+          <linearGradient id="glazeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ff0055"/>
+            <stop offset="100%" stop-color="#d60046"/>
+          </linearGradient>
+
+          <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#802e3b" flood-opacity="0.15"/>
+          </filter>
+        </defs>
+
+        <!-- Plate Shadow & Plate -->
+        <ellipse cx="160" cy="262" rx="130" ry="20" fill="rgba(0,0,0,0.08)"/>
+        <ellipse cx="160" cy="256" rx="125" ry="18" fill="#ffffff" stroke="#e0e0e0" stroke-width="2"/>
+        <ellipse cx="160" cy="253" rx="112" ry="14" fill="#f8f9fa"/>
+
+        <!-- BOTTOM TIER -->
+        <g id="bottom-tier" filter="url(#softShadow)">
+          <path d="M 60,180 L 60,230 C 60,252 260,252 260,230 L 260,180 Z" fill="url(#cakeLayer)" stroke="#6d1b29" stroke-width="2"/>
+          <ellipse cx="160" cy="180" rx="100" ry="22" fill="#fff5f7" stroke="#6d1b29" stroke-width="2"/>
+          <path d="M 60,205 C 100,222 220,222 260,205" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+          <path d="M 60,180 Q 75,210 90,185 Q 105,215 125,188 Q 145,220 160,188 Q 178,218 195,185 Q 215,212 230,183 Q 248,208 260,180 C 260,195 60,195 60,180 Z" fill="url(#glazeGrad)"/>
+          
+          <!-- Sprinkles -->
+          <rect x="80" y="215" width="6" height="2" rx="1" fill="#ffeaa7" transform="rotate(25 80 215)"/>
+          <rect x="120" y="225" width="6" height="2" rx="1" fill="#74b9ff" transform="rotate(-15 120 225)"/>
+          <rect x="170" y="228" width="6" height="2" rx="1" fill="#55efc4" transform="rotate(40 170 228)"/>
+          <rect x="220" y="218" width="6" height="2" rx="1" fill="#fd79a8" transform="rotate(-30 220 218)"/>
+        </g>
+
+        <!-- TOP TIER -->
+        <g id="top-tier" filter="url(#softShadow)">
+          <path d="M 90,120 L 90,165 C 90,182 230,182 230,165 L 230,120 Z" fill="url(#cakeLayer)" stroke="#6d1b29" stroke-width="2"/>
+          <ellipse cx="160" cy="120" rx="70" ry="16" fill="#ffffff" stroke="#6d1b29" stroke-width="2"/>
+          <path d="M 90,120 Q 102,145 115,124 Q 130,148 145,125 Q 160,150 175,123 Q 190,146 205,122 Q 218,142 230,120 C 230,135 90,135 90,120 Z" fill="url(#glazeGrad)"/>
+          
+          <circle cx="110" cy="150" r="2" fill="#ffeaa7"/>
+          <circle cx="140" cy="158" r="2" fill="#74b9ff"/>
+          <circle cx="180" cy="156" r="2" fill="#55efc4"/>
+          <circle cx="210" cy="148" r="2" fill="#ffffff"/>
+        </g>
+
+        <!-- TOPPINGS -->
+        <g id="topping-decorations">
+          <ellipse cx="105" cy="116" rx="9" ry="6" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+          <ellipse cx="215" cy="116" rx="9" ry="6" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+          <path d="M 118,112 C 112,100 125,92 128,106 C 130,118 122,120 118,112 Z" fill="#ff4d4d" stroke="#6d1b29" stroke-width="1"/>
+          <path d="M 120,98 L 123,103 M 123,97 L 124,103" stroke="#2ed573" stroke-width="1.5"/>
+          <path d="M 202,112 C 196,100 209,92 212,106 C 214,118 206,120 202,112 Z" fill="#ff4d4d" stroke="#6d1b29" stroke-width="1"/>
+          <path d="M 204,98 L 207,103 M 207,97 L 208,103" stroke="#2ed573" stroke-width="1.5"/>
+        </g>
+
+        <!-- CANDLE -->
+        <g id="candle">
+          <rect x="154" y="60" width="12" height="52" rx="3" fill="#74b9ff" stroke="#6d1b29" stroke-width="1.5"/>
+          <path d="M 154,68 L 166,74 M 154,82 L 166,88 M 154,96 L 166,102" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+          <line x1="160" y1="50" x2="160" y2="60" stroke="#2c3e50" stroke-width="2.5" stroke-linecap="round"/>
+        </g>
+
+        <!-- CANDLE FLAME -->
+        <g id="candle-flame" [class.extinguished]="isCandleBlown">
+          <circle cx="160" cy="36" r="22" fill="#ffd32a" opacity="0.35" class="flame-glow"/>
+          <circle cx="160" cy="36" r="14" fill="#ff9f1a" opacity="0.5" class="flame-glow"/>
+          <path d="M 160,18 C 150,32 150,45 160,50 C 170,45 170,32 160,18 Z" fill="#ff9f1a" class="flame-anim"/>
+          <path d="M 160,28 C 155,36 155,44 160,47 C 165,44 165,36 160,28 Z" fill="#fff200"/>
+        </g>
+
+        <!-- SMOKE ANIMATION -->
+        <g id="candle-smoke" *ngIf="isCandleBlown">
+          <path d="M 160,45 Q 150,30 158,15 Q 166,0 154,-15" fill="none" stroke="#d1d8e0" stroke-width="3" stroke-linecap="round" class="smoke-anim"/>
+          <path d="M 162,45 Q 172,32 165,16 Q 156,2 166,-10" fill="none" stroke="#b2bec3" stroke-width="2" stroke-linecap="round" class="smoke-anim-delay"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- GRAND CELEBRATION MESSAGE -->
+    <div class="celebration-msg pop-in" *ngIf="isCandleBlown">
+      <h1 class="grand-wish">💥 HAPPY BIRTHDAY VAISHNAVI! 💥</h1>
+      <p class="grand-subtext">Tuzyasathi ha divas ani mahina khup khas aso! 🎉❤️</p>
+      <p class="sub-quote">May all your wishes come true!</p>
+
+      <!-- ⬇️ ADD THIS BUTTON TO GO TO CUTE MOMENTS SCREEN ⬇️ -->
+      <div style="margin-top: 22px;">
+        <button class="btn-common action-btn" (click)="goToMemoryScreen()">
+          See Cute Moments 💕 ✨
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- STEP 6: CUTE MOMENTS / MEMORY GALLERY SCREEN -->
+<div class="screen-overlay memory-screen" *ngIf="currentStep === 6">
+  
+  <!-- Floating Hearts Background -->
+  <div class="floating-hearts">
+    <span>💖</span><span>✨</span><span>🌸</span><span>💕</span><span>✨</span><span>🎀</span>
+  </div>
+
+  <div class="card-container memory-card">
+    <h2 class="memory-title">Some Cute Moments ✨</h2>
+    <p class="memory-subtitle">Tap on the photo to see the next moment! ❤️</p>
+
+    <!-- Polaroid Photo Frame (Clickable for Next Photo) -->
+    <div class="polaroid-wrapper">
+      <div 
+        class="polaroid-frame clickable" 
+        [class.photo-animate]="isAnimating"
+        (click)="nextPhoto()">
+        <img [src]="memoryPhotos[currentPhotoIndex]" alt="Cute Moment" class="polaroid-img" />
+        <p class="polaroid-caption">{{ photoCaptions[currentPhotoIndex] }}</p>
+      </div>
+
+      <!-- Photo Counter Indicator -->
+      <div class="photo-counter-badge">
+        {{ currentPhotoIndex + 1 }} of {{ memoryPhotos.length }} 📸
+      </div>
+    </div>
+
+    <!-- Compliments & Message Box -->
+    <div class="sweet-notes-box">
+      <p class="sweet-line">🌸 <b>Khup goad ahes tu:</b> Your smile brighten up anyone's day.</p>
+    </div>
+
+    <div class="final-tag">
+      Happy Birthday once again, Vaishnavi! 🥳👑
+    </div>
+
+    <!-- ⬇️ BUTTON FOR NEXT SURPRISE ⬇️ -->
+    <div style="margin-top: 15px;">
+      <button class="btn-common action-btn" (click)="goToLetterScreen()">
+        One more surprise for u 🎁
+      </button>
+    </div>
+  </div>
+  </div>
+
+ <!-- Step 7: Letter Screen -->
+<div class="screen-overlay letter-screen" *ngIf="currentStep === 7">
+  
+  <!-- Envelope View -->
+  <div class="envelope-box" *ngIf="!showFullPaper" (click)="openEnvelope()">
+    <div class="envelope-back"></div>
+    <div class="envelope-paper-preview" [class.slide-up]="isEnvelopeOpened"></div>
+    <div class="envelope-pocket"></div>
+    <div class="envelope-flap" [class.opened]="isEnvelopeOpened"></div>
+    <div class="envelope-content-overlay" *ngIf="!isEnvelopeOpened">
+      <div class="seal-heart">💌</div>
+      <div class="click-instruction">What's inside my mind about you !!</div>
+    </div>
+  </div>
+
+  <!-- Scroll Letter View -->
+  <div class="scroll-letter-container unroll-animation" *ngIf="showFullPaper">
+    <div class="scroll-roller">
+      <div class="roller-cap"></div>
+      <div class="roller-body"></div>
+      <div class="roller-cap"></div>
+    </div>
+
+    <div class="parchment-paper">
+      <span class="flower-petal petal-1">🌸</span>
+      <span class="flower-petal petal-2">🌹</span>
+      <span class="flower-petal petal-3">✨</span>
+
+      <div class="scroll-text-content">
+        <p class="written-text">
+          {{ typedText }}
+          <span class="pen-icon" *ngIf="isTyping">✍️</span>
+        </p>
+      </div>
+
+      <!-- ONE MORE LAST SURPRISE BUTTON (Appears when typing finishes) -->
+      <div class="letter-footer fade-in-up" *ngIf="!isTyping">
+        <button class="btn-common glow-btn surprise-next-btn" (click)="finishSurprise()">
+          One Last Surprise 🎁✨
+        </button>
+      </div>
+    </div>
+
+    <div class="scroll-roller">
+      <div class="roller-cap"></div>
+      <div class="roller-body"></div>
+      <div class="roller-cap"></div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- STEP 8: THE PROPOSAL SURPRISE -->
+<div class="screen-overlay proposal-screen" *ngIf="currentStep === 8">
+  <div class="card-container proposal-card">
+
+    <h2 class="proposal-heading">One Last Gift For You... 🎁</h2>
+    <p class="proposal-subheading" *ngIf="proposalStep === 1">
+      Tap the gift box below to open your final surprise.
+    </p>
+
+    <!-- GIFT UNWRAPPING STEP (Step 1) -->
+    <div class="gift-box-wrapper" *ngIf="proposalStep === 1" (click)="openProposalGift()">
+      <div class="gift-box">
+        <div class="gift-lid"><div class="ribbon-bow"></div></div>
+        <div class="gift-body">
+          <div class="ribbon-vertical"></div>
+          <div class="ribbon-horizontal"></div>
+        </div>
+      </div>
+      <p class="tap-hint">✨ Tap to open ✨</p>
+    </div>
+
+    <!-- CARTOON ILLUSTRATION & STORYBOARD (Step 2 & Step 3) -->
+    <div class="story-illustration-card fade-in" *ngIf="proposalStep >= 2">
+      
+      <!-- SVG Cartoon Scene -->
+      <div class="illustration-scene">
+        <svg viewBox="0 0 500 360" class="scene-svg">
+          <defs>
+            <!-- Background Sky Gradient -->
+            <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#fde2e4" />
+              <stop offset="100%" stop-color="#fff0f3" />
+            </linearGradient>
+
+            <!-- Grass Hill Gradient -->
+            <linearGradient id="hillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#a8e6cf" />
+              <stop offset="100%" stop-color="#88d8b0" />
+            </linearGradient>
+
+            <!-- Suit Gradient -->
+            <linearGradient id="suitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2b2d42" />
+              <stop offset="100%" stop-color="#1d1e2c" />
+            </linearGradient>
+          </defs>
+
+          <!-- Sky Background -->
+          <rect width="500" height="360" fill="url(#skyGrad)" rx="20"/>
+
+          <!-- Gentle Floating Hearts in Sky -->
+          <g class="floating-sky-hearts">
+            <text x="70" y="60" fill="#ff758f" font-size="18" opacity="0.6">💕</text>
+            <text x="230" y="40" fill="#ff4d6d" font-size="16" opacity="0.5">💖</text>
+            <text x="410" y="70" fill="#ff758f" font-size="20" opacity="0.6">✨</text>
+          </g>
+
+          <!-- Rolling Grass Hill -->
+          <path d="M 0 260 Q 250 220 500 260 L 500 360 L 0 360 Z" fill="url(#hillGrad)" />
+
+          <!-- Big Blossom Tree (Right Side) -->
+          <g class="tree-group">
+            <!-- Tree Trunk -->
+            <path d="M 370 270 Q 385 190 410 140 Q 425 180 430 270 Z" fill="#6d4c41"/>
+            <!-- Tree Canopy -->
+            <circle cx="410" cy="110" r="70" fill="#ffb3c1" opacity="0.9" />
+            <circle cx="370" cy="130" r="50" fill="#ff85a1" opacity="0.85" />
+            <circle cx="440" cy="130" r="45" fill="#f72585" opacity="0.4" />
+            <!-- Falling Petals -->
+            <circle cx="390" cy="180" r="4" fill="#ff4d6d" class="falling-petal p1"/>
+            <circle cx="350" cy="210" r="3" fill="#ff758f" class="falling-petal p2"/>
+            <circle cx="410" cy="220" r="5" fill="#ffb3c1" class="falling-petal p3"/>
+          </g>
+
+          <!-- HER (Under the tree) -->
+          <g class="her-character" transform="translate(330, 190)">
+            <!-- Hair -->
+            <path d="M 20 15 Q 35 -10 50 15 C 55 45 45 65 52 80 C 42 75 40 50 35 30 C 25 50 22 75 18 80 C 20 60 15 40 20 15 Z" fill="#3d2314"/>
+            <!-- Dress -->
+            <path d="M 25 35 L 12 85 Q 35 90 58 85 L 45 35 Z" fill="#ff4d6d"/>
+            <!-- Face & Crown/Ribbon -->
+            <circle cx="35" cy="20" r="14" fill="#ffd1dc"/>
+            <path d="M 25 10 Q 35 2 45 10" stroke="#ffd700" stroke-width="3" fill="none"/>
+            <!-- Eyes/Blush -->
+            <circle cx="30" cy="20" r="2" fill="#555"/>
+            <circle cx="40" cy="20" r="2" fill="#555"/>
+            <circle cx="27" cy="24" r="3" fill="#ff758f" opacity="0.6"/>
+            <circle cx="43" cy="24" r="3" fill="#ff758f" opacity="0.6"/>
+            <!-- Surprised / Happy Hands -->
+            <path d="M 25 40 Q 15 30 12 22" stroke="#ffd1dc" stroke-width="4" stroke-linecap="round"/>
+            <path d="M 45 40 Q 55 30 58 22" stroke="#ffd1dc" stroke-width="4" stroke-linecap="round"/>
+          </g>
+
+          <!-- HIM IN SUIT (Walking / Kneeling Animation) -->
+          <!-- Standing / Walking State -->
+          <g class="him-character walking-anim" *ngIf="proposalStep === 2" transform="translate(140, 185)">
+            <!-- Head -->
+            <circle cx="30" cy="18" r="14" fill="#ffd1dc"/>
+            <path d="M 18 12 Q 30 0 42 12 C 40 5 20 5 18 12 Z" fill="#2b1a09"/> <!-- Hair -->
+            <!-- Suit Body -->
+            <path d="M 18 32 L 42 32 L 46 80 L 14 80 Z" fill="url(#suitGrad)"/>
+            <!-- White Shirt & Red Tie -->
+            <polygon points="27,32 33,32 31,52 29,52" fill="#ffffff"/>
+            <polygon points="29,34 31,34 32,48 30,50 28,48" fill="#ff0055"/>
+            <!-- Legs (Walking position) -->
+            <rect x="18" y="80" width="10" height="35" fill="#1d1e2c" rx="3"/>
+            <rect x="32" y="80" width="10" height="35" fill="#1d1e2c" rx="3"/>
+            <!-- Arms holding Tulip Bouquet -->
+            <path d="M 38 42 L 60 48" stroke="#ffd1dc" stroke-width="5" stroke-linecap="round"/>
+            <!-- Tulip Bouquet -->
+            <g transform="translate(55, 30)">
+              <path d="M 10 25 L 2 45 L 22 45 Z" fill="#74c69d"/> <!-- Wrapper -->
+              <!-- Tulip Buds -->
+              <circle cx="6" cy="20" r="7" fill="#ff0055"/>
+              <circle cx="14" cy="16" r="7" fill="#ff4d6d"/>
+              <circle cx="20" cy="22" r="7" fill="#ff758f"/>
+            </g>
+          </g>
+
+          <!-- Kneeling / Proposing State (Step 3) -->
+          <g class="him-character kneeling-anim" *ngIf="proposalStep === 3" transform="translate(230, 205)">
+            <!-- Head looking up slightly -->
+            <circle cx="25" cy="12" r="14" fill="#ffd1dc"/>
+            <path d="M 13 8 Q 25 -4 37 8 C 35 1 15 1 13 8 Z" fill="#2b1a09"/>
+            <!-- Suit Coat Kneeling Bent -->
+            <path d="M 13 26 L 37 26 L 42 65 L 8 65 Z" fill="url(#suitGrad)"/>
+            <!-- White Shirt & Tie -->
+            <polygon points="22,26 28,26 26,44 24,44" fill="#ffffff"/>
+            <polygon points="24,28 26,28 27,40 25,42 23,40" fill="#ff0055"/>
+            <!-- Bent Leg (Proposing Kneel) -->
+            <path d="M 10 65 L 35 65 L 35 90 L 22 90 Z" fill="#1d1e2c"/>
+            <path d="M 5 80 L -20 80 L -20 90 L 5 90 Z" fill="#1d1e2c"/>
+            <!-- Extended Arms Offering Tulips -->
+            <path d="M 32 36 L 62 30" stroke="#ffd1dc" stroke-width="5" stroke-linecap="round"/>
+            <!-- Bouquet -->
+            <g transform="translate(60, 10)">
+              <path d="M 10 25 L 0 48 L 24 48 Z" fill="#74c69d"/>
+              <circle cx="5" cy="18" r="8" fill="#ff0055"/>
+              <circle cx="14" cy="12" r="8" fill="#ff4d6d"/>
+              <circle cx="22" cy="18" r="8" fill="#ff758f"/>
+              <!-- Glowing Sparkles around bouquet -->
+              <text x="25" y="10" fill="#ffd700" font-size="14">✨</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <!-- PROPOSAL MESSAGE CONTENT -->
+      <div class="proposal-story-text">
+        <div *ngIf="proposalStep === 2" class="story-step-1 fade-in">
+          <p class="story-p">
+            <i>"I walked all this way, through every moment and every memory, just to reach you..."</i>
+          </p>
+          <button class="btn-common glow-btn" (click)="kneelAndPropose()">
+            Listen To My Heart ❤️
+          </button>
+        </div>
+
+        <div *ngIf="proposalStep === 3" class="story-step-2 pop-in">
+          <h3 class="proposal-title">Will You Be Mine, Forever? 💍❤️</h3>
+          <p class="proposal-heartfelt-text">
+            "It’s your birthday today, but the greatest gift in my life will always be <b>YOU</b>. 
+            I don't just want to be here for today... I want to stand by your side, holding your hand, through every single chapter of our lives.<br><br>
+            <b>I Love You So Much! ❤️</b>"
+          </p>
+
+          <div class="final-response-btns" *ngIf="!hasAccepted">
+            <button class="btn-common glow-btn accept-btn" (click)="acceptProposal()">
+              YES! Forever Yours! 💖🥹
+            </button>
+          </div>
+
+          <!-- AFTER SHE SAYS YES -->
+          <div class="accepted-message pop-in" *ngIf="hasAccepted">
+            <h4 class="forever-tag">You Just Made Me The Happiest Person Alive! 🥳🎉</h4>
+            <p class="final-subtext">Thank you for making my world so beautiful. Happy Birthday, My Love! 🌸✨</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

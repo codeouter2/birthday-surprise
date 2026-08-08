@@ -1,12 +1,15 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { Birthday } from './birthday/birthday'; // 1. Import Birthday
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [Birthday], // 2. Add Birthday here
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('birthday-surprise');
+  title = 'birthday-surprise';
 }
