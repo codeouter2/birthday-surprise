@@ -1503,3 +1503,278 @@
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ==========================================
+   CENTER STEP 8 CONTAINER
+   ========================================== */
+
+.step-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.final-card {
+  max-width: 580px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ==========================================
+   ONE-BY-ONE PHOTO MODAL CAROUSEL
+   ========================================== */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.modal-card {
+  background: radial-gradient(circle at center, #fff0f3 0%, #ffccd5 100%);
+  width: 100%;
+  max-width: 650px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  animation: scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-header {
+  padding: 16px 24px;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ffe0e6;
+}
+
+.header-title h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #b01440;
+  font-weight: 700;
+}
+
+.header-title p {
+  margin: 2px 0 0 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.btn-close-modal {
+  background: #fff0f3;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: #b01440;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Single Photo Viewer Layout */
+.single-photo-body {
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.single-polaroid {
+  background: #ffffff;
+  padding: 12px 12px 16px 12px;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+  flex: 1;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.washi-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 20px;
+  background: rgba(255, 182, 193, 0.85);
+  border-left: 2px dashed rgba(255, 255, 255, 0.6);
+  border-right: 2px dashed rgba(255, 255, 255, 0.6);
+}
+
+.photo-frame {
+  width: 100%;
+  height: 750px;
+  overflow: hidden;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polaroid-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Nav Arrow Buttons */
+.nav-btn {
+  background: #ffffff;
+  color: #b01440;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.nav-btn:hover {
+  background: #ffccd5;
+  transform: scale(1.1);
+}
+
+/* Footer Dots Indicator */
+.modal-footer {
+  padding: 14px 24px;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ffe0e6;
+}
+
+.dots-indicator {
+  display: flex;
+  gap: 6px;
+  max-width: 300px;
+  overflow-x: auto;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffd6e0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dot.active {
+  background: #b01440;
+  transform: scale(1.3);
+}
+
+.btn-modal-done {
+  background: linear-gradient(135deg, #b01440, #ff0055);
+  color: #ffffff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ==========================================
+   MOBILE BLOCK OVERLAY STYLES
+   ========================================== */
+
+.mobile-block-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #fff0f3 0%, #ffccd5 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.mobile-block-card {
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 24px;
+  text-align: center;
+  max-width: 380px;
+  box-shadow: 0 15px 35px rgba(176, 20, 64, 0.2);
+  border: 1px solid #ffe0e6;
+}
+
+.block-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.mobile-block-card h2 {
+  color: #b01440;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.mobile-block-card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.block-alert-box {
+  background: #fff0f3;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px dashed #ff758f;
+  color: #b01440;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+/* Hard CSS fallback media query to hide step-container on small screens */
+@media screen and (max-width: 767px) {
+  .step-container {
+    display: none !important;
+  }
+}

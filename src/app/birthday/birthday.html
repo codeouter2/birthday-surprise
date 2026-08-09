@@ -1,3 +1,18 @@
+<!-- MOBILE ONLY BLOCK SCREEN -->
+<div class="mobile-block-overlay" *ngIf="isMobile">
+  <div class="mobile-block-card">
+    <div class="block-icon">💻✨</div>
+    <h2>Desktop Only Experience!</h2>
+    <p>
+      Hey Vaishnavi! 💖 <br><br>
+      This birthday surprise has special interactive animations and sound effects designed specifically for a bigger screen.
+    </p>
+    <div class="block-alert-box">
+      <span>Please open this link on your <strong>Desktop or Laptop</strong> browser for the best magic! 🌸</span>
+    </div>
+  </div>
+</div>
+
 <!-- Mobile warning popup banner (optional) -->
 <div class="mobile-banner">
   <i class="fa-solid fa-desktop"></i> For best experience, please view on Desktop/Laptop! ❤️
@@ -58,8 +73,8 @@
 <div class="birthday-header">
   <span class="birthday-greeting">Happy Birthday</span>
   <h1 class="birthday-name-styled">
-    <span class="first-name">VAISHNAVI</span>
-    <span class="last-name">JADHAV</span>
+    <span class="first-name">VAISHU</span>
+    <span class="last-name">💖</span>
   </h1>
   <div class="decorative-line">
     <span class="line-sparkle">✨</span>
@@ -304,7 +319,7 @@
     </div>
 
     <div class="next-btn-container" *ngIf="poppedCount === 4">
-      <button class="btn-common" (click)="goToBouquetScreen()">See Final Surprise 🌷</button>
+      <button class="btn-common" (click)="goToBouquetScreen()">See Next Surprise 🌷</button>
     </div>
   </div>
 </div>
@@ -733,9 +748,103 @@
             <h4 class="forever-tag">You Just Made Me The Happiest Person Alive! 🥳🎉</h4>
             <p class="final-subtext">Thank you for making my world so beautiful. Happy Birthday, My Love! 🌸✨</p>
           </div>
+
+          <!-- ONE MORE LAST SURPRISE BUTTON (Appears when typing finishes) -->
+      <div class="letter-footer fade-in-up" *ngIf="!isTyping">
+        <button class="btn-common glow-btn surprise-next-btn" (click)="goToGallaryScreen()">
+          One Last Surprise 🎁✨
+        </button>
+      </div>
+
         </div>
       </div>
 
+    </div>
+
+  </div>
+</div>
+
+<!-- STEP 8 CONTAINER (CENTERED CARD) -->
+<div class="step-container" *ngIf="currentStep === 9">
+  <div class="card-container final-card">
+    
+    <div class="card-badge">💌 With All My Heart</div>
+    <h2>Happy Birthday Once Again, My Precious One! 🎂✨</h2>
+    
+    <p class="final-letter-text">
+      From Mumbai to Nagpur, across every mile and every screen call, you mean the absolute world to me. 
+      This little digital world was built just to put a big smile on your face today. 
+      Thank you for being the sweetest part of my life. 💖
+    </p>
+
+    <div class="gallery-cta-box">
+      <p class="cta-subtitle">I captured some of our best video call moments together...</p>
+      
+      <button type="button" class="btn-common btn-gallery-trigger" (click)="openGalleryModal()">
+        <span class="btn-icon">📸</span> Unforgettable memories 🎵
+      </button>
+    </div>
+
+    <div class="signoff-section">
+      <p class="signoff-text">That’s all from my side today! Hope you loved your surprise. 🥰</p>
+      <span class="signature">Forever & Always Yours, <br><strong>Ajay ❤️</strong></span>
+    </div>
+
+  </div>
+</div>
+
+<!-- GALLERY MODAL OVERLAY (ONE-BY-ONE CAROUSEL) -->
+<div class="modal-backdrop" *ngIf="isModalOpen" (click)="closeGalleryModal()">
+  <div class="modal-card" (click)="$event.stopPropagation()">
+    
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <div class="header-title">
+        <h3>Mumbai ⇄ Nagpur Memories ❤️</h3>
+        <p>Memory {{ currentIndex + 1 }} of {{ callPhotos.length }}</p>
+      </div>
+      <button type="button" class="btn-close-modal" (click)="closeGalleryModal()">✕</button>
+    </div>
+
+    <!-- Audio Element -->
+    <audio #galleryAudio src="song.mp3" loop preload="auto"></audio>
+
+    <!-- Modal Body: Single Picture Viewer -->
+    <div class="modal-body single-photo-body">
+      
+      <!-- Previous Button -->
+      <button type="button" class="nav-btn prev-btn" (click)="prevPhoto()">❮</button>
+
+      <!-- Polaroid Card Displaying Active Photo -->
+      <div class="polaroid-card single-polaroid" *ngIf="callPhotos.length > 0">
+        <div class="washi-tape"></div>
+        <div class="photo-frame">
+          <img [src]="callPhotos[currentIndex].url" [alt]="callPhotos[currentIndex].caption" />
+        </div>
+        <div class="polaroid-caption">
+          <span>{{ callPhotos[currentIndex].caption }}</span>
+          <span class="heart-icon">💖</span>
+        </div>
+      </div>
+
+      <!-- Next Button -->
+      <button type="button" class="nav-btn next-btn" (click)="nextPhotos()">❯</button>
+
+    </div>
+
+    <!-- Modal Footer -->
+    <div class="modal-footer">
+      <div class="dots-indicator">
+        <span 
+          *ngFor="let photo of callPhotos; let i = index" 
+          class="dot" 
+          [class.active]="i === currentIndex"
+          (click)="currentIndex = i">
+        </span>
+      </div>
+      <button type="button" class="btn-modal-done" (click)="closeGalleryModal()">
+        Close Gallery 🌸
+      </button>
     </div>
 
   </div>

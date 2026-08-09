@@ -11,11 +11,14 @@ import { FormsModule } from '@angular/forms';   // 2. Import FormsModule
 })
 export class Birthday {
   @ViewChild('bgMusic') bgMusic!: ElementRef<HTMLAudioElement>;
-
+@ViewChild('galleryAudio') galleryAudio!: ElementRef<HTMLAudioElement>;
   // Step state
   currentStep: number = 1;
   passcodeInput: string = '';
   errorMessage: boolean = false;
+  isModalOpen: boolean = false;
+  currentIndex: number = 0;
+  isMobile: boolean = false; // Mobile detection flag
 
   // Step 3 state
   poppedBalloons: boolean[] = [false, false, false, false];
@@ -61,6 +64,63 @@ fullLetterMessage: string =
   proposalStep: number = 1; // 1 = Closed Gift, 2 = Walking Scene, 3 = Kneeling Proposal
   hasAccepted: boolean = false;
 
+  // Step 10: 
+  // Array of 12 Video Call Screenshots placed in public/ or src/assets/
+  callPhotos = [
+    { url: 'img1.jpeg', caption: 'Late night giggles 🌙' },
+    { url: 'img2.jpeg', caption: 'Your sweetest smile 🥰' },
+    { url: 'img3.jpeg', caption: 'Mumbai ✈️ Nagpur vibes' },
+    { url: 'img4.jpeg', caption: 'Morning tea together ☕' },
+    { url: 'img5.jpeg', caption: 'Making funny faces 😜' },
+    { url: 'img6.jpeg', caption: 'Screen share dates 🎬' },
+    { url: 'img7.jpeg', caption: 'Endless conversations 💬' },
+    { url: 'img8.jpeg', caption: 'When you fell asleep 😴' },
+    { url: 'img10.jpeg', caption: 'Virtual hugs 🤗' },
+    { url: 'img11.jpeg', caption: 'Counting down days ⏳' },
+    { url: 'img12.jpeg', caption: 'My favorite person forever ❤️' }
+  ];
+
+  openGalleryModal(): void {
+    if (this.bgMusic && this.bgMusic.nativeElement) {
+      this.bgMusic.nativeElement.pause();
+    }
+
+    this.currentIndex = 0; // Reset to first photo
+    this.isModalOpen = true;
+
+    setTimeout(() => {
+      if (this.galleryAudio && this.galleryAudio.nativeElement) {
+        const audio = this.galleryAudio.nativeElement;
+        audio.currentTime = 0;
+        audio.volume = 0.8;
+        audio.play().catch(err => console.warn('Autoplay error:', err));
+      }
+    }, 150);
+  }
+
+closeGalleryModal(): void {
+    this.isModalOpen = false;
+    if (this.galleryAudio && this.galleryAudio.nativeElement) {
+      this.galleryAudio.nativeElement.pause();
+    }
+  }
+
+  nextPhotos(): void {
+    if (this.currentIndex < this.callPhotos.length - 1) {
+      this.currentIndex++;
+    } else {
+      this.currentIndex = 0; // Loop back to start
+    }
+  }
+
+  prevPhoto(): void {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+    } else {
+      this.currentIndex = this.callPhotos.length - 1; // Loop to end
+    }
+  }
+
   // --- METHODS ---
 
   unlockSite(): void {
@@ -81,6 +141,10 @@ fullLetterMessage: string =
 
   goToBalloonScreen(): void {
     this.currentStep = 3;
+  }
+
+  goToGallaryScreen():void{
+     this.currentStep = 9;
   }
 
   moveNoBtn(event: Event): void {
@@ -128,16 +192,14 @@ fullLetterMessage: string =
     this.triggerConfetti(60, { x: 0.5, y: 0.5 }, ['#ff7675', '#fd79a8', '#e84393']);
   }
 
- @ViewChild('hbdSong') hbdSong!: ElementRef<HTMLAudioElement>;
-
 goToNextSurprise(): void {
   this.currentStep = 5;
   this.playHbdSong();
 }
 
 playHbdSong(): void {
-  if (this.hbdSong && this.hbdSong.nativeElement) {
-    const audio = this.hbdSong.nativeElement;
+  if (this.bgMusic && this.bgMusic.nativeElement) {
+    const audio = this.bgMusic.nativeElement;
     
     // Reset and attempt play
     audio.currentTime = 0;
@@ -250,4 +312,20 @@ blowOutCandle(): void {
     // Grand celebration confetti burst
     this.triggerConfetti(180, { x: 0.5, y: 0.5 }, ['#ff0055', '#ffd700', '#ffffff', '#a29bfe', '#ff758f']);
   }
+
+  ngOnInit(): void {
+    this.checkDevice();
+  }
+
+  // Detects mobile user agents or screen width under 768px
+  checkDevice(): void {
+    const userAgent = navigator.userAgent || navigator.vendor;
+    const isMobileDevice = /android|iphone|ipad|ipod|blackberry|windows phone/i.test(userAgent.toLowerCase());
+    const isSmallScreen = window.innerWidth < 768;
+
+    if (isMobileDevice || isSmallScreen) {
+      this.isMobile = true;
+    }
+  }
 }
+
