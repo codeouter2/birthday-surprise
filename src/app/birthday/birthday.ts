@@ -75,6 +75,7 @@ fullLetterMessage: string =
     { url: 'img6.jpeg', caption: 'Screen share dates 🎬' },
     { url: 'img7.jpeg', caption: 'Endless conversations 💬' },
     { url: 'img8.jpeg', caption: 'When you fell asleep 😴' },
+    { url: 'img9.jpeg', caption: 'dinner together 😴' },
     { url: 'img10.jpeg', caption: 'Virtual hugs 🤗' },
     { url: 'img11.jpeg', caption: 'Counting down days ⏳' },
     { url: 'img12.jpeg', caption: 'My favorite person forever ❤️' }
